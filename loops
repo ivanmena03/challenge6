@@ -1,0 +1,36 @@
+// Created on Mon April 6 2020
+int l_motor = 0;
+int r_motor = 2;
+int speed = 60;
+
+void forward() {											//Robot goes forward
+	motor(r_motor, speed);
+	motor(l_motor, speed); 
+	}
+	
+void left(){												//Robot turns left
+    motor(r_motor,speed);
+    motor(l_motor, -speed);
+	}
+	
+void loop(){                                //Robot loops forward and left
+ 
+	int count;
+	for(count = 1; count <= 6; count++) {					
+		printf("count is %d \n", count);							
+		forward();																
+		msleep(800);
+		left();															
+		msleep(500);
+		}
+
+	}
+
+int main()
+{
+	printf("Hello, World!\n");
+	
+	loop();
+	
+	return 0;
+}
